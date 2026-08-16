@@ -259,12 +259,14 @@ function Index() {
               >
                 <div className="flex items-start gap-4">
                   <LogoBadge src={e.logo} alt={`${e.org} logo`} />
-                  <div>
-                    <h3 className="text-2xl font-medium">{e.role}</h3>
+                  <div className="min-w-0 flex-1">
+                    <div className="flex flex-col gap-1 sm:flex-row sm:items-start sm:justify-between">
+                      <h3 className="text-2xl font-medium">{e.role}</h3>
+                      <p className="text-sm text-muted-foreground">{e.period}</p>
+                    </div>
                     <p className="mt-1 text-base text-muted-foreground">
                       {e.org} · {e.place}
                     </p>
-                    <p className="mt-1 text-sm text-muted-foreground">{e.period}</p>
                   </div>
                 </div>
                 <ul className="mt-4 max-w-3xl space-y-1.5">
