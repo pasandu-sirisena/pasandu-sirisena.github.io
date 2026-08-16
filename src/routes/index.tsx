@@ -295,10 +295,10 @@ function Index() {
         </div>
       </section>
 
-      <WaveDivider fillClassName="text-secondary" />
+      <WaveDivider fillClassName="text-background" />
 
       {/* Projects */}
-      <section id="projects" className="scroll-mt-20 bg-secondary">
+      <section id="projects" className="scroll-mt-20 bg-background">
         <div className="mx-auto max-w-5xl px-6 py-24">
           <h2 className="text-4xl font-medium sm:text-5xl">Projects</h2>
           <p className="eyebrow mt-2 text-muted-foreground">Selected works</p>
@@ -333,7 +333,7 @@ function Index() {
       </section>
 
       {/* Skills */}
-      <section id="skills" className="scroll-mt-20 bg-secondary">
+      <section id="skills" className="scroll-mt-20 bg-background">
         <div className="mx-auto max-w-5xl px-6 pb-24">
           <h2 className="text-4xl font-medium sm:text-5xl">Skills</h2>
           <p className="eyebrow mt-2 text-muted-foreground">What I work with</p>
@@ -359,7 +359,7 @@ function Index() {
       </section>
 
       {/* Education */}
-      <section id="education" className="scroll-mt-20 bg-secondary">
+      <section id="education" className="scroll-mt-20 bg-background">
         <div className="mx-auto max-w-5xl px-6 pb-24">
           <h2 className="text-4xl font-medium sm:text-5xl">Education</h2>
           <p className="eyebrow mt-2 text-muted-foreground">Where I study</p>

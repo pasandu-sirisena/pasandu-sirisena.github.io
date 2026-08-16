@@ -41,9 +41,9 @@
      display: "Space Grotesk"; body: "DM Sans"
      display: "Instrument Serif"; body: "Source Serif 4" */
   --font-display: "DM Serif Display", ui-serif, Georgia, serif;
-  --font-sans: "Source Serif 4", ui-serif, Georgia, serif;
+  --font-sans: "DM Sans", ui-sans-serif, system-ui, sans-serif;
   --font-ui: "DM Serif Display", ui-serif, Georgia, serif;
-  --font-ui-body: "Source Serif 4", ui-serif, Georgia, serif;
+  --font-ui-body: "DM Sans", ui-sans-serif, system-ui, sans-serif;
 }
 
 :root {
@@ -65,10 +65,10 @@
   --popover-foreground: var(--navy);
   --primary: var(--navy);
   --primary-foreground: var(--sand);
-  --secondary: var(--sand-deep);
+  --secondary: var(--background);
   --secondary-foreground: var(--navy);
   --muted: var(--sand-deep);
-  --muted-foreground: oklch(0.36 0.035 258);
+  --muted-foreground: oklch(0.32 0.03 258);
   --accent: var(--sand-deep);
   --accent-foreground: var(--navy);
   --destructive: oklch(0.577 0.245 27.325);
