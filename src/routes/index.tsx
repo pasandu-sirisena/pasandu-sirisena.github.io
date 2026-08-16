@@ -5,6 +5,7 @@ import l3logo from "@/assets/l3harris.png.asset.json";
 import cibcLogo from "@/assets/cibc.jpg.asset.json";
 import mcmasterLogo from "@/assets/mcmaster.jpg.asset.json";
 import { WaveDivider } from "@/components/WaveDivider";
+import { useScrollY } from "@/hooks/use-scroll-y";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -208,6 +209,8 @@ function LogoBadge({ src, alt }: { src: string; alt: string }) {
 }
 
 function Index() {
+  const scrollY = useScrollY();
+
   return (
     <main className="bg-background">
       <TopBar />
@@ -220,9 +223,11 @@ function Index() {
           width={1573}
           height={1047}
           aria-hidden="true"
-          className="absolute inset-0 h-full w-full object-cover opacity-40"
+          className="absolute inset-0 h-full w-full scale-110 object-cover opacity-40"
+          style={{ transform: `translate3d(0, ${scrollY * 0.25}px, 0) scale(1.15)` }}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-navy-deep/70 via-navy-deep/55 to-navy-deep" />
+
 
         <div className="relative mx-auto flex min-h-[92vh] max-w-5xl flex-col justify-center px-6 py-28">
           <h1 className="rise-in text-5xl font-medium leading-[1.02] text-sand sm:text-7xl">
