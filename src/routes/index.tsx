@@ -247,7 +247,7 @@ function Index() {
 
       {/* Experience */}
       <section id="experience" className="scroll-mt-20 bg-background">
-        <div className="mx-auto max-w-5xl px-6 py-24">
+        <div className="mx-auto max-w-5xl px-6 pb-8 pt-24">
           <h2 className="text-4xl font-medium sm:text-5xl">Experience</h2>
           <p className="eyebrow mt-2 text-muted-foreground">Where I've worked</p>
 
@@ -297,7 +297,7 @@ function Index() {
 
       {/* Projects */}
       <section id="projects" className="scroll-mt-20 bg-background">
-        <div className="mx-auto max-w-5xl px-6 py-24">
+        <div className="mx-auto max-w-5xl px-6 pb-24 pt-8">
           <h2 className="text-4xl font-medium sm:text-5xl">Projects</h2>
           <p className="eyebrow mt-2 text-muted-foreground">Selected works</p>
 
@@ -370,12 +370,14 @@ function Index() {
               >
                 <div className="flex items-start gap-4">
                   <LogoBadge src={ed.logo} alt={`${ed.school} logo`} />
-                  <div>
-                    <h3 className="text-2xl font-medium">{ed.school}</h3>
+                  <div className="min-w-0 flex-1">
+                    <div className="flex flex-col gap-1 sm:flex-row sm:items-start sm:justify-between">
+                      <h3 className="text-2xl font-medium">{ed.school}</h3>
+                      <p className="text-sm text-muted-foreground">{ed.period}</p>
+                    </div>
                     <p className="mt-1 text-base text-muted-foreground">
                       {ed.degree} · {ed.place}
                     </p>
-                    <p className="mt-1 text-sm text-muted-foreground">{ed.period}</p>
                   </div>
                 </div>
                 <ul className="mt-4 max-w-3xl space-y-1.5">
