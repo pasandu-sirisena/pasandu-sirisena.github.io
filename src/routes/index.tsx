@@ -219,8 +219,8 @@ function Index() {
             <br />
             Sirisena
           </h1>
-          <p className="eyebrow rise-in mt-6 text-sand-muted">Burlington, Ontario</p>
-          <p className="rise-in mt-8 max-w-2xl text-lg leading-relaxed text-sand/75">
+          <p className="eyebrow rise-in mt-5 text-sand-muted">Burlington, Ontario</p>
+          <p className="rise-in mt-6 max-w-2xl text-xl leading-relaxed text-sand/80">
             4th year computer engineering student at McMaster University, with a passion for digital
             logic design, FPGA development, and high-performance compute architectures. I specialize
             in bridging the gap between hardware architecture and low-level firmware to build
