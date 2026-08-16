@@ -237,42 +237,40 @@ function Index() {
       {/* Experience */}
       <section id="experience" className="scroll-mt-20 bg-background">
         <div className="mx-auto max-w-5xl px-6 py-24">
-          <p className="eyebrow text-muted-foreground">Where I've worked</p>
-          <h2 className="mt-4 text-3xl font-medium sm:text-4xl">Experience</h2>
+          <h2 className="text-4xl font-medium sm:text-5xl">Experience</h2>
+          <p className="eyebrow mt-2 text-muted-foreground">Where I've worked</p>
 
-          <div className="mt-14 space-y-4">
+          <div className="mt-10 space-y-4">
             {experience.map((e) => (
               <article
                 key={e.role + e.org}
                 className="rounded-2xl border border-border bg-card p-7 transition-all duration-300 hover:-translate-y-0.5 hover:border-navy-soft/40"
               >
-                <div className="flex flex-wrap items-start justify-between gap-x-6 gap-y-3">
-                  <div className="flex items-start gap-4">
-                    <LogoBadge src={e.logo} alt={`${e.org} logo`} />
-                    <div>
-                      <h3 className="text-xl font-medium">{e.role}</h3>
-                      <p className="mt-1 text-sm text-muted-foreground">
-                        {e.org} · {e.place}
-                      </p>
-                    </div>
+                <div className="flex items-start gap-4">
+                  <LogoBadge src={e.logo} alt={`${e.org} logo`} />
+                  <div>
+                    <h3 className="text-2xl font-medium">{e.role}</h3>
+                    <p className="mt-1 text-base text-muted-foreground">
+                      {e.org} · {e.place}
+                    </p>
+                    <p className="mt-1 text-sm text-muted-foreground">{e.period}</p>
                   </div>
-                  <span className="mt-1 shrink-0 text-xs text-muted-foreground">{e.period}</span>
                 </div>
-                <ul className="mt-4 max-w-3xl space-y-2">
+                <ul className="mt-4 max-w-3xl space-y-1.5">
                   {e.points.map((pt) => (
                     <li
                       key={pt}
-                      className="relative pl-4 text-sm leading-relaxed text-muted-foreground before:absolute before:left-0 before:top-[0.6em] before:h-1 before:w-1 before:rounded-full before:bg-navy-soft/50"
+                      className="relative pl-4 text-base leading-relaxed text-muted-foreground before:absolute before:left-0 before:top-[0.6em] before:h-1 before:w-1 before:rounded-full before:bg-navy-soft/50"
                     >
                       {pt}
                     </li>
                   ))}
                 </ul>
-                <ul className="mt-5 flex flex-wrap gap-2">
+                <ul className="mt-4 flex flex-wrap gap-2">
                   {e.tags.map((t) => (
                     <li
                       key={t}
-                      className="rounded-full border border-border px-3 py-1 text-xs text-muted-foreground"
+                      className="rounded-full border border-border px-4 py-1.5 text-sm text-muted-foreground"
                     >
                       {t}
                     </li>
@@ -289,27 +287,25 @@ function Index() {
       {/* Projects */}
       <section id="projects" className="scroll-mt-20 bg-secondary">
         <div className="mx-auto max-w-5xl px-6 py-24">
-          <p className="eyebrow text-muted-foreground">Selected work</p>
-          <h2 className="mt-4 text-3xl font-medium sm:text-4xl">Projects</h2>
+          <h2 className="text-4xl font-medium sm:text-5xl">Projects</h2>
+          <p className="eyebrow mt-2 text-muted-foreground">Selected works</p>
 
-          <div className="mt-14 space-y-4">
+          <div className="mt-10 space-y-4">
             {projects.map((p) => (
               <article
                 key={p.title}
                 className="group rounded-2xl border border-border bg-card p-7 transition-all duration-300 hover:-translate-y-0.5 hover:border-navy-soft/40"
               >
-                <div className="flex items-start justify-between gap-6">
-                  <h3 className="text-xl font-medium">{p.title}</h3>
-                  <span className="mt-1 shrink-0 text-xs text-muted-foreground">{p.year}</span>
-                </div>
-                <p className="mt-3 max-w-3xl text-sm leading-relaxed text-muted-foreground">
+                <h3 className="text-2xl font-medium">{p.title}</h3>
+                <p className="mt-1 text-sm text-muted-foreground">{p.year}</p>
+                <p className="mt-3 max-w-3xl text-base leading-relaxed text-muted-foreground">
                   {p.body}
                 </p>
-                <ul className="mt-5 flex flex-wrap gap-2">
+                <ul className="mt-4 flex flex-wrap gap-2">
                   {p.tags.map((t) => (
                     <li
                       key={t}
-                      className="rounded-full border border-border px-3 py-1 text-xs text-muted-foreground"
+                      className="rounded-full border border-border px-4 py-1.5 text-sm text-muted-foreground"
                     >
                       {t}
                     </li>
@@ -324,18 +320,18 @@ function Index() {
       {/* Skills */}
       <section id="skills" className="scroll-mt-20 bg-secondary">
         <div className="mx-auto max-w-5xl px-6 pb-24">
-          <p className="eyebrow text-muted-foreground">What I work with</p>
-          <h2 className="mt-4 text-3xl font-medium sm:text-4xl">Skills</h2>
+          <h2 className="text-4xl font-medium sm:text-5xl">Skills</h2>
+          <p className="eyebrow mt-2 text-muted-foreground">What I work with</p>
 
-          <div className="mt-14 space-y-8">
+          <div className="mt-10 space-y-6">
             {skills.map((s) => (
               <div key={s.group} className="border-t border-border pt-5">
-                <h3 className="text-lg font-medium">{s.group}</h3>
-                <ul className="mt-4 flex flex-wrap gap-2">
+                <h3 className="text-xl font-medium">{s.group}</h3>
+                <ul className="mt-3 flex flex-wrap gap-2.5">
                   {s.items.map((i) => (
                     <li
                       key={i}
-                      className="rounded-full border border-border bg-card px-3 py-1 text-xs text-muted-foreground"
+                      className="rounded-full border border-border bg-card px-5 py-2 text-base text-muted-foreground"
                     >
                       {i}
                     </li>
@@ -350,32 +346,30 @@ function Index() {
       {/* Education */}
       <section id="education" className="scroll-mt-20 bg-secondary">
         <div className="mx-auto max-w-5xl px-6 pb-24">
-          <p className="eyebrow text-muted-foreground">Where I study</p>
-          <h2 className="mt-4 text-3xl font-medium sm:text-4xl">Education</h2>
+          <h2 className="text-4xl font-medium sm:text-5xl">Education</h2>
+          <p className="eyebrow mt-2 text-muted-foreground">Where I study</p>
 
-          <div className="mt-14 space-y-4">
+          <div className="mt-10 space-y-4">
             {education.map((ed) => (
               <article
                 key={ed.school}
                 className="rounded-2xl border border-border bg-card p-7 transition-all duration-300 hover:-translate-y-0.5 hover:border-navy-soft/40"
               >
-                <div className="flex flex-wrap items-start justify-between gap-x-6 gap-y-3">
-                  <div className="flex items-start gap-4">
-                    <LogoBadge src={ed.logo} alt={`${ed.school} logo`} />
-                    <div>
-                      <h3 className="text-xl font-medium">{ed.school}</h3>
-                      <p className="mt-1 text-sm text-muted-foreground">
-                        {ed.degree} · {ed.place}
-                      </p>
-                    </div>
+                <div className="flex items-start gap-4">
+                  <LogoBadge src={ed.logo} alt={`${ed.school} logo`} />
+                  <div>
+                    <h3 className="text-2xl font-medium">{ed.school}</h3>
+                    <p className="mt-1 text-base text-muted-foreground">
+                      {ed.degree} · {ed.place}
+                    </p>
+                    <p className="mt-1 text-sm text-muted-foreground">{ed.period}</p>
                   </div>
-                  <span className="mt-1 shrink-0 text-xs text-muted-foreground">{ed.period}</span>
                 </div>
-                <ul className="mt-4 max-w-3xl space-y-2">
+                <ul className="mt-4 max-w-3xl space-y-1.5">
                   {ed.points.map((pt) => (
                     <li
                       key={pt}
-                      className="relative pl-4 text-sm leading-relaxed text-muted-foreground before:absolute before:left-0 before:top-[0.6em] before:h-1 before:w-1 before:rounded-full before:bg-navy-soft/50"
+                      className="relative pl-4 text-base leading-relaxed text-muted-foreground before:absolute before:left-0 before:top-[0.6em] before:h-1 before:w-1 before:rounded-full before:bg-navy-soft/50"
                     >
                       {pt}
                     </li>
@@ -391,19 +385,19 @@ function Index() {
       {/* Contact */}
       <footer id="contact" className="scroll-mt-20 bg-navy-deep">
         <div className="mx-auto max-w-5xl px-6 py-24">
-          <p className="eyebrow text-sand-muted">Let's connect</p>
-          <h2 className="mt-4 max-w-2xl text-3xl font-medium text-sand sm:text-4xl">
+          <h2 className="max-w-2xl text-4xl font-medium text-sand sm:text-5xl">
             Currently looking for opportunities in design verification and AI chip workflows.
           </h2>
-          <p className="mt-5 max-w-xl text-sand/70">
+          <p className="eyebrow mt-3 text-sand-muted">Let's connect!</p>
+          <p className="mt-4 max-w-xl text-lg text-sand/75">
             Always glad to talk hardware, low-level software, or anything in between.
           </p>
 
-          <div className="mt-10">
+          <div className="mt-8">
             <SocialButtons />
           </div>
 
-          <div className="mt-20 flex flex-wrap items-center justify-between gap-4 border-t border-sand/15 pt-6 text-xs text-sand/50">
+          <div className="mt-20 flex flex-wrap items-center justify-between gap-4 border-t border-sand/15 pt-6 text-sm text-sand/55">
             <span>© {new Date().getFullYear()} Pasandu Sirisena</span>
             <a
               href={LINKS.email}
