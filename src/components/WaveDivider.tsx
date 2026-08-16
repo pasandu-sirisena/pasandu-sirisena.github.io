@@ -61,7 +61,3 @@ export function WaveDivider({
     </div>
   );
 }
-
-    </div>
-  );
-}
