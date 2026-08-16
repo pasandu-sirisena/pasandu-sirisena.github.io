@@ -11,15 +11,16 @@ type Props = {
   parallax?: number;
 };
 
+/** Seamless sine-like wave: starts and ends at the same height so tiles loop. */
 const WAVE_PATH =
-  "M0 18c120 14 240 21 360 15s240-26 360-27 240 18 360 24 240 1 360-9v27H0Z";
+  "M0 30 q180 -40 360 0 t360 0 t360 0 t360 0 V60 H0 Z";
 
 function Wave({ fillClassName }: { fillClassName: string }) {
   return (
     <svg
-      viewBox="0 0 1440 48"
+      viewBox="0 0 1440 60"
       preserveAspectRatio="none"
-      className={`block h-8 w-1/2 shrink-0 sm:h-12 ${fillClassName}`}
+      className={`block h-10 w-1/3 shrink-0 sm:h-14 ${fillClassName}`}
     >
       <path fill="currentColor" d={WAVE_PATH} />
     </svg>
@@ -35,7 +36,8 @@ export function WaveDivider({
   parallax = 0.08,
 }: Props) {
   const scrollY = useScrollY();
-  const shift = ((scrollY * rippleSpeed) % 50) - 50;
+  const TILE = 100 / 3; // one tile as a % of the 300%-wide track
+  const shift = -TILE - (((scrollY * rippleSpeed) % TILE) + TILE) % TILE;
 
   return (
     <div
@@ -49,12 +51,17 @@ export function WaveDivider({
       }}
     >
       <div
-        className="flex w-[200%]"
+        className="flex w-[300%]"
         style={{ transform: `translate3d(${shift}%, 0, 0)`, willChange: "transform" }}
       >
         <Wave fillClassName={fillClassName} />
         <Wave fillClassName={fillClassName} />
+        <Wave fillClassName={fillClassName} />
       </div>
+    </div>
+  );
+}
+
     </div>
   );
 }
