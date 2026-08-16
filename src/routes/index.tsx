@@ -47,12 +47,12 @@ const experience = [
     role: "Hardware/Software Test Engineering Intern",
     org: "L3Harris WESCAM",
     place: "Hamilton, ON",
-    period: "May 2026 to Present",
+    period: "May 2026 - Present",
     logo: l3logo.url,
     points: [
-      "Write low-level C/C++ unit test software to validate custom cables, electronic hardware and development kits, debugging across the hardware/software boundary.",
-      "Deploy automated scripts and performance analysis tooling to systematically test MX series electro-mechanical camera turrets.",
-      "Work directly with hardware and systems teams to build physical test infrastructure, integrating discrete circuit elements with embedded software features.",
+      "Wrote low-level C/C++ unit test software to validate custom cables, electronic hardware and development kits, debugging across the hardware/software boundary.",
+      "Deployed automated scripts and performance analysis tooling to systematically test MX series electro-mechanical camera turrets.",
+      "Worked directly with hardware and systems teams to build physical test infrastructure, integrating discrete circuit elements with embedded software features.",
     ],
     tags: ["C/C++", "Test Automation", "Hardware Validation"],
   },
@@ -60,7 +60,7 @@ const experience = [
     role: "Software Development & IT Project Management Intern",
     org: "CIBC",
     place: "Toronto, ON",
-    period: "May 2025 to Aug 2025",
+    period: "May 2025 - Aug 2025",
     logo: cibcLogo.url,
     points: [
       "Built and tested a critical Java/Spring Boot microservice with JUnit 5 and Mockito, cutting regression bugs by over 40%.",
@@ -74,21 +74,33 @@ const experience = [
 const projects = [
   {
     title: "FPGA-Based Wi-Fi Spatial Sensor",
-    year: "2026",
+    year: "April 2026",
     body: "Programmed an ESP32 in C/C++ to extract and filter raw Wi-Fi Channel State Information, with custom Verilog logic on a Tang Primer FPGA accelerating high-throughput parallel signal workloads and Python spatial algorithms analysing the CSI metrics end to end.",
     tags: ["Verilog", "C/C++", "Python", "ESP32", "FPGA"],
   },
   {
+    title: "Real-Time Software-Defined Radio (SDR)",
+    year: "March - April 2026",
+    body: "Built a real-time SDR system on a Raspberry Pi 4 with RF hardware to process FM mono and stereo signals. The DSP pipeline was modelled in Python and then optimised in C++ to meet strict real-time constraints, using a multithreaded producer-consumer architecture with a FIFO queue and mutex synchronisation to handle high-speed data streams without audio stuttering.",
+    tags: ["C++", "Python", "DSP", "Raspberry Pi", "Multithreading"],
+  },
+  {
     title: "FPGA-Based Image Decompressor",
-    year: "2025",
+    year: "Oct - Nov 2025",
     body: "Designed the hardware architecture for an image decompressor on the Altera DE2-115 and implemented it in SystemVerilog, covering reverse DCT, luma/chroma upsampling and lossless decoding, verified with waveform analysis, SRAM references and VGA output.",
     tags: ["SystemVerilog", "FPGA", "Digital Logic", "Verification"],
   },
   {
     title: "3D Spatial Mapping System (ToF Sensor)",
-    year: "2025",
-    body: "An embedded 3D spatial mapper pairing a Time-of-Flight sensor with firmware in C/C++ on an ARM Cortex-M4F microcontroller, processing and visualising 360° point clouds in Open3D.",
-    tags: ["C/C++", "ARM Cortex-M4F", "Python", "Open3D"],
+    year: "March - April 2025",
+    body: "An embedded 3D spatial mapper pairing a Time-of-Flight sensor with firmware in C/C++ on a Cortex-M4F microcontroller, processing and visualising 360° point clouds in Open3D.",
+    tags: ["C/C++", "Microcontrollers", "Python", "Open3D"],
+  },
+  {
+    title: "Vital-E: ESP32 Autonomous Hospital Robot",
+    year: "Feb 2025",
+    body: "An autonomous robotics platform on the ESP32 that collects and transmits patient vitals in low-resource clinical settings, using line-following navigation and proximity detection to move through hospital corridors and wirelessly deliver real-time bedside data to a secure web dashboard.",
+    tags: ["ESP32", "C/C++", "Embedded Systems", "Sensors", "Web Dashboard"],
   },
 ];
 
@@ -99,7 +111,18 @@ const skills = [
   },
   {
     group: "Embedded systems & hardware",
-    items: ["VHDL", "FPGAs", "Digital Logic Design", "Circuit Design", "PCB Design"],
+    items: [
+      "VHDL",
+      "FPGAs",
+      "Digital Logic Design",
+      "Circuit Design",
+      "PCB Design",
+      "Microcontrollers",
+      "ESP32",
+      "Raspberry Pi",
+      "Digital Signal Processing",
+      "Multithreading",
+    ],
   },
   {
     group: "Tools & technologies",
@@ -122,19 +145,18 @@ const education = [
     school: "McMaster University",
     degree: "Bachelor of Engineering, Computer Engineering (Co-op)",
     place: "Hamilton, ON",
-    period: "Sep 2023 to May 2028",
+    period: "Sep 2023 - May 2028",
     logo: mcmasterLogo.url,
     points: [
       "Currently in 4th year, expected to graduate in 2028.",
       "Coursework across digital logic design, microelectronics, embedded systems and computer architecture.",
-      "GPA: 3.5/4.0",
     ],
   },
 ];
 
 function SocialButtons() {
   const base =
-    "group inline-flex items-center gap-2 rounded-full border border-sand/30 bg-sand/5 px-5 py-3 text-sm font-medium text-sand backdrop-blur-sm transition-all duration-300 hover:bg-sand hover:text-navy-deep";
+    "group inline-flex items-center gap-2 rounded-full border border-sand/30 bg-sand/5 px-5 py-3 text-base font-medium text-sand backdrop-blur-sm transition-all duration-300 hover:bg-sand hover:text-navy-deep";
   return (
     <div className="flex flex-wrap items-center gap-3">
       <a href={LINKS.github} target="_blank" rel="noreferrer" className={base}>
@@ -160,7 +182,7 @@ function TopBar() {
             <li key={n.href}>
               <a
                 href={n.href}
-                className="link-underline text-xs font-medium text-sand/70 transition-colors hover:text-sand"
+                className="link-underline text-sm font-medium text-sand/70 transition-colors hover:text-sand"
               >
                 {n.label}
               </a>
@@ -208,8 +230,8 @@ function Index() {
             <br />
             Sirisena
           </h1>
-          <p className="eyebrow rise-in mt-6 text-sand-muted">Burlington, Ontario</p>
-          <p className="rise-in mt-8 max-w-2xl text-lg leading-relaxed text-sand/75">
+          <p className="eyebrow rise-in mt-5 text-sand-muted">Burlington, Ontario</p>
+          <p className="rise-in mt-6 max-w-2xl text-xl leading-relaxed text-sand/80">
             4th year computer engineering student at McMaster University, with a passion for digital
             logic design, FPGA development, and high-performance compute architectures. I specialize
             in bridging the gap between hardware architecture and low-level firmware to build
@@ -226,42 +248,40 @@ function Index() {
       {/* Experience */}
       <section id="experience" className="scroll-mt-20 bg-background">
         <div className="mx-auto max-w-5xl px-6 py-24">
-          <p className="eyebrow text-muted-foreground">Where I've worked</p>
-          <h2 className="mt-4 text-3xl font-medium sm:text-4xl">Experience</h2>
+          <h2 className="text-4xl font-medium sm:text-5xl">Experience</h2>
+          <p className="eyebrow mt-2 text-muted-foreground">Where I've worked</p>
 
-          <div className="mt-14 space-y-4">
+          <div className="mt-10 space-y-4">
             {experience.map((e) => (
               <article
                 key={e.role + e.org}
                 className="rounded-2xl border border-border bg-card p-7 transition-all duration-300 hover:-translate-y-0.5 hover:border-navy-soft/40"
               >
-                <div className="flex flex-wrap items-start justify-between gap-x-6 gap-y-3">
-                  <div className="flex items-start gap-4">
-                    <LogoBadge src={e.logo} alt={`${e.org} logo`} />
-                    <div>
-                      <h3 className="text-xl font-medium">{e.role}</h3>
-                      <p className="mt-1 text-sm text-muted-foreground">
-                        {e.org} · {e.place}
-                      </p>
-                    </div>
+                <div className="flex items-start gap-4">
+                  <LogoBadge src={e.logo} alt={`${e.org} logo`} />
+                  <div>
+                    <h3 className="text-2xl font-medium">{e.role}</h3>
+                    <p className="mt-1 text-base text-muted-foreground">
+                      {e.org} · {e.place}
+                    </p>
+                    <p className="mt-1 text-sm text-muted-foreground">{e.period}</p>
                   </div>
-                  <span className="mt-1 shrink-0 text-xs text-muted-foreground">{e.period}</span>
                 </div>
-                <ul className="mt-4 max-w-3xl space-y-2">
+                <ul className="mt-4 max-w-3xl space-y-1.5">
                   {e.points.map((pt) => (
                     <li
                       key={pt}
-                      className="relative pl-4 text-sm leading-relaxed text-muted-foreground before:absolute before:left-0 before:top-[0.6em] before:h-1 before:w-1 before:rounded-full before:bg-navy-soft/50"
+                      className="relative pl-4 text-base leading-relaxed text-muted-foreground before:absolute before:left-0 before:top-[0.6em] before:h-1 before:w-1 before:rounded-full before:bg-navy-soft/50"
                     >
                       {pt}
                     </li>
                   ))}
                 </ul>
-                <ul className="mt-5 flex flex-wrap gap-2">
+                <ul className="mt-4 flex flex-wrap gap-2">
                   {e.tags.map((t) => (
                     <li
                       key={t}
-                      className="rounded-full border border-border px-3 py-1 text-xs text-muted-foreground"
+                      className="rounded-full border border-border px-4 py-1.5 text-sm text-muted-foreground"
                     >
                       {t}
                     </li>
@@ -278,27 +298,25 @@ function Index() {
       {/* Projects */}
       <section id="projects" className="scroll-mt-20 bg-secondary">
         <div className="mx-auto max-w-5xl px-6 py-24">
-          <p className="eyebrow text-muted-foreground">Selected work</p>
-          <h2 className="mt-4 text-3xl font-medium sm:text-4xl">Projects</h2>
+          <h2 className="text-4xl font-medium sm:text-5xl">Projects</h2>
+          <p className="eyebrow mt-2 text-muted-foreground">Selected works</p>
 
-          <div className="mt-14 space-y-4">
+          <div className="mt-10 space-y-4">
             {projects.map((p) => (
               <article
                 key={p.title}
                 className="group rounded-2xl border border-border bg-card p-7 transition-all duration-300 hover:-translate-y-0.5 hover:border-navy-soft/40"
               >
-                <div className="flex items-start justify-between gap-6">
-                  <h3 className="text-xl font-medium">{p.title}</h3>
-                  <span className="mt-1 shrink-0 text-xs text-muted-foreground">{p.year}</span>
-                </div>
-                <p className="mt-3 max-w-3xl text-sm leading-relaxed text-muted-foreground">
+                <h3 className="text-2xl font-medium">{p.title}</h3>
+                <p className="mt-1 text-sm text-muted-foreground">{p.year}</p>
+                <p className="mt-3 max-w-3xl text-base leading-relaxed text-muted-foreground">
                   {p.body}
                 </p>
-                <ul className="mt-5 flex flex-wrap gap-2">
+                <ul className="mt-4 flex flex-wrap gap-2">
                   {p.tags.map((t) => (
                     <li
                       key={t}
-                      className="rounded-full border border-border px-3 py-1 text-xs text-muted-foreground"
+                      className="rounded-full border border-border px-4 py-1.5 text-sm text-muted-foreground"
                     >
                       {t}
                     </li>
@@ -313,18 +331,18 @@ function Index() {
       {/* Skills */}
       <section id="skills" className="scroll-mt-20 bg-secondary">
         <div className="mx-auto max-w-5xl px-6 pb-24">
-          <p className="eyebrow text-muted-foreground">What I work with</p>
-          <h2 className="mt-4 text-3xl font-medium sm:text-4xl">Skills</h2>
+          <h2 className="text-4xl font-medium sm:text-5xl">Skills</h2>
+          <p className="eyebrow mt-2 text-muted-foreground">What I work with</p>
 
-          <div className="mt-14 space-y-8">
+          <div className="mt-10 space-y-6">
             {skills.map((s) => (
               <div key={s.group} className="border-t border-border pt-5">
-                <h3 className="text-lg font-medium">{s.group}</h3>
-                <ul className="mt-4 flex flex-wrap gap-2">
+                <h3 className="text-xl font-medium">{s.group}</h3>
+                <ul className="mt-3 flex flex-wrap gap-2.5">
                   {s.items.map((i) => (
                     <li
                       key={i}
-                      className="rounded-full border border-border bg-card px-3 py-1 text-xs text-muted-foreground"
+                      className="rounded-full border border-border bg-card px-5 py-2 text-base text-muted-foreground"
                     >
                       {i}
                     </li>
@@ -339,32 +357,30 @@ function Index() {
       {/* Education */}
       <section id="education" className="scroll-mt-20 bg-secondary">
         <div className="mx-auto max-w-5xl px-6 pb-24">
-          <p className="eyebrow text-muted-foreground">Where I study</p>
-          <h2 className="mt-4 text-3xl font-medium sm:text-4xl">Education</h2>
+          <h2 className="text-4xl font-medium sm:text-5xl">Education</h2>
+          <p className="eyebrow mt-2 text-muted-foreground">Where I study</p>
 
-          <div className="mt-14 space-y-4">
+          <div className="mt-10 space-y-4">
             {education.map((ed) => (
               <article
                 key={ed.school}
                 className="rounded-2xl border border-border bg-card p-7 transition-all duration-300 hover:-translate-y-0.5 hover:border-navy-soft/40"
               >
-                <div className="flex flex-wrap items-start justify-between gap-x-6 gap-y-3">
-                  <div className="flex items-start gap-4">
-                    <LogoBadge src={ed.logo} alt={`${ed.school} logo`} />
-                    <div>
-                      <h3 className="text-xl font-medium">{ed.school}</h3>
-                      <p className="mt-1 text-sm text-muted-foreground">
-                        {ed.degree} · {ed.place}
-                      </p>
-                    </div>
+                <div className="flex items-start gap-4">
+                  <LogoBadge src={ed.logo} alt={`${ed.school} logo`} />
+                  <div>
+                    <h3 className="text-2xl font-medium">{ed.school}</h3>
+                    <p className="mt-1 text-base text-muted-foreground">
+                      {ed.degree} · {ed.place}
+                    </p>
+                    <p className="mt-1 text-sm text-muted-foreground">{ed.period}</p>
                   </div>
-                  <span className="mt-1 shrink-0 text-xs text-muted-foreground">{ed.period}</span>
                 </div>
-                <ul className="mt-4 max-w-3xl space-y-2">
+                <ul className="mt-4 max-w-3xl space-y-1.5">
                   {ed.points.map((pt) => (
                     <li
                       key={pt}
-                      className="relative pl-4 text-sm leading-relaxed text-muted-foreground before:absolute before:left-0 before:top-[0.6em] before:h-1 before:w-1 before:rounded-full before:bg-navy-soft/50"
+                      className="relative pl-4 text-base leading-relaxed text-muted-foreground before:absolute before:left-0 before:top-[0.6em] before:h-1 before:w-1 before:rounded-full before:bg-navy-soft/50"
                     >
                       {pt}
                     </li>
@@ -380,19 +396,19 @@ function Index() {
       {/* Contact */}
       <footer id="contact" className="scroll-mt-20 bg-navy-deep">
         <div className="mx-auto max-w-5xl px-6 py-24">
-          <p className="eyebrow text-sand-muted">Let's connect</p>
-          <h2 className="mt-4 max-w-2xl text-3xl font-medium text-sand sm:text-4xl">
+          <h2 className="max-w-2xl text-4xl font-medium text-sand sm:text-5xl">
             Currently looking for opportunities in design verification and AI chip workflows.
           </h2>
-          <p className="mt-5 max-w-xl text-sand/70">
+          <p className="eyebrow mt-3 text-sand-muted">Let's connect!</p>
+          <p className="mt-4 max-w-xl text-lg text-sand/75">
             Always glad to talk hardware, low-level software, or anything in between.
           </p>
 
-          <div className="mt-10">
+          <div className="mt-8">
             <SocialButtons />
           </div>
 
-          <div className="mt-20 flex flex-wrap items-center justify-between gap-4 border-t border-sand/15 pt-6 text-xs text-sand/50">
+          <div className="mt-20 flex flex-wrap items-center justify-between gap-4 border-t border-sand/15 pt-6 text-sm text-sand/55">
             <span>© {new Date().getFullYear()} Pasandu Sirisena</span>
             <a
               href={LINKS.email}

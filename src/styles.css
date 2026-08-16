@@ -42,8 +42,8 @@
      display: "Instrument Serif"; body: "Source Serif 4" */
   --font-display: "DM Serif Display", ui-serif, Georgia, serif;
   --font-sans: "Source Serif 4", ui-serif, Georgia, serif;
-  --font-ui: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
-  --font-ui-body: "DM Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-ui: "DM Serif Display", ui-serif, Georgia, serif;
+  --font-ui-body: "Source Serif 4", ui-serif, Georgia, serif;
 }
 
 :root {
@@ -54,7 +54,7 @@
   --navy-deep: oklch(0.18 0.05 258);
   --navy-soft: oklch(0.32 0.05 258);
   --sand: oklch(0.955 0.018 88);
-  --sand-deep: oklch(0.9 0.03 88);
+  --sand-deep: oklch(0.945 0.016 88);
   --sand-muted: oklch(0.72 0.025 88);
 
   --background: var(--sand);
@@ -68,7 +68,7 @@
   --secondary: var(--sand-deep);
   --secondary-foreground: var(--navy);
   --muted: var(--sand-deep);
-  --muted-foreground: oklch(0.48 0.03 258);
+  --muted-foreground: oklch(0.36 0.035 258);
   --accent: var(--sand-deep);
   --accent-foreground: var(--navy);
   --destructive: oklch(0.577 0.245 27.325);
@@ -108,8 +108,8 @@
 @utility eyebrow {
   font-family: var(--font-ui-body);
   font-weight: 500;
-  font-size: 0.75rem;
-  letter-spacing: 0.04em;
+  font-size: 0.9375rem;
+  letter-spacing: 0.02em;
 }
 
 @utility link-underline {
