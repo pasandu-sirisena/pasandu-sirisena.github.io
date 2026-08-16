@@ -157,7 +157,7 @@ const education = [
 
 function SocialButtons() {
   const base =
-    "group inline-flex items-center gap-2 rounded-full border border-sand/30 bg-sand/5 px-5 py-3 text-base font-medium text-sand backdrop-blur-sm transition-all duration-300 hover:bg-sand hover:text-navy-deep";
+    "group inline-flex items-center gap-2 rounded-full border border-sand/30 bg-sand/5 px-5 py-3 text-base font-medium text-sand backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:bg-sand hover:text-navy-deep";
   return (
     <div className="flex flex-wrap items-center gap-3">
       <a href={LINKS.github} target="_blank" rel="noreferrer" className={base}>
@@ -349,7 +349,7 @@ function Index() {
                   {s.items.map((i) => (
                     <li
                       key={i}
-                      className="rounded-full border border-border bg-card px-5 py-2 text-base text-muted-foreground transition-all duration-300 hover:-translate-y-1 hover:shadow-sm hover:border-navy-soft/40"
+                      className="rounded-full border border-border bg-card px-5 py-2 text-base text-muted-foreground transition-all duration-300 hover:-translate-y-1 hover:shadow-sm hover:bg-navy-deep hover:text-sand"
                     >
                       {i}
                     </li>
