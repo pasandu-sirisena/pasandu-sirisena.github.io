@@ -31,43 +31,80 @@ const LINKS = {
   email: "mailto:pasandu2sirisenad@gmail.com",
 };
 
+const experience = [
+  {
+    role: "Hardware/Software Test Engineering Intern",
+    org: "L3Harris WESCAM",
+    place: "Hamilton, ON",
+    period: "May 2026 — Present",
+    points: [
+      "Write low-level C/C++ test software to validate custom cables, electronic hardware and development kits, debugging across the hardware/software boundary.",
+      "Deploy automated scripts and performance analysis tooling to systematically test MX-10, MX-15 and MX-20 electro-mechanical camera turrets.",
+      "Work directly with hardware and systems teams to build physical test infrastructure, integrating logic ICs and discrete circuit elements with embedded software.",
+    ],
+    tags: ["C/C++", "Test Automation", "Hardware Validation"],
+  },
+  {
+    role: "Software Development & IT Project Management Intern",
+    org: "CIBC",
+    place: "Toronto, ON",
+    period: "May 2025 — Aug 2025",
+    points: [
+      "Built and tested a critical Java/Spring Boot microservice with JUnit 5 and Mockito, cutting regression bugs by over 40%.",
+      "Tracked financial resources for $1M+ in technology infrastructure projects using Agile methodologies and Jira.",
+      "Led a $25K Azure server migration, upgrading critical RHEL systems across development, testing and production environments.",
+    ],
+    tags: ["Java", "Spring Boot", "Azure", "JUnit"],
+  },
+  {
+    role: "B.Eng. Computer Engineering (Co-op)",
+    org: "McMaster University",
+    place: "Hamilton, ON",
+    period: "Sep 2023 — May 2028",
+    points: [
+      "Coursework across digital logic design, microelectronics, embedded systems and computer architecture.",
+    ],
+    tags: ["Education"],
+  },
+];
+
 const projects = [
   {
     title: "FPGA-Based Wi-Fi Spatial Sensor",
     year: "2026",
-    body: "Hardware and firmware co-design for spatial scanning: ESP32 firmware streams RSSI samples into FPGA logic that timestamps and buffers them, with a Python pipeline reconstructing the spatial map.",
-    tags: ["Verilog", "C/C++", "Python", "ESP32"],
+    body: "Programmed an ESP32 in C/C++ to extract and filter raw Wi-Fi Channel State Information, with custom Verilog logic on a Tang Primer FPGA accelerating high-throughput parallel signal workloads and Python spatial algorithms analysing the CSI metrics end to end.",
+    tags: ["Verilog", "C/C++", "Python", "ESP32", "FPGA"],
   },
   {
-    title: "3D Environment Reconstruction System",
+    title: "FPGA-Based Image Decompressor",
     year: "2025",
-    body: "A custom spatial measurement device pairing a Time-of-Flight sensor with a stepper motor to sweep a room, producing point clouds rendered as navigable wireframe geometry.",
-    tags: ["Python", "Open3D", "Hardware Integration"],
+    body: "Designed the hardware architecture for an image decompressor on the Altera DE2-115 and implemented it in SystemVerilog — reverse DCT, luma/chroma upsampling and lossless decoding — verified with waveform analysis, SRAM references and VGA output.",
+    tags: ["SystemVerilog", "FPGA", "Digital Logic", "Verification"],
   },
   {
-    title: "Image Decompressor",
+    title: "3D Spatial Mapping System (ToF Sensor)",
     year: "2025",
-    body: "A from-scratch decoder that parses compressed image streams and rebuilds pixel data, built around custom data structures and careful memory handling.",
-    tags: ["C++", "Data Structures", "Algorithms"],
+    body: "An embedded 3D spatial mapper pairing a Time-of-Flight sensor with firmware in C/C++ on an ARM Cortex-M4F microcontroller, processing and visualising 360° point clouds in Open3D.",
+    tags: ["C/C++", "ARM Cortex-M4F", "Python", "Open3D"],
   },
 ];
 
 const focus = [
   {
     title: "Digital Logic & FPGA",
-    body: "RTL design in Verilog, timing-aware architecture, simulation and verification benches.",
+    body: "RTL design in Verilog and SystemVerilog, timing-aware architecture, simulation and waveform-level verification.",
   },
   {
     title: "Firmware & Embedded",
-    body: "Bare-metal and RTOS-adjacent C/C++ on ESP32 and ARM, peripheral drivers and sensor pipelines.",
+    body: "Bare-metal C/C++ on ESP32 and ARM Cortex-M, peripheral drivers and sensor data pipelines.",
   },
   {
     title: "Microelectronics",
-    body: "Device physics, CMOS fundamentals and the path from schematic to silicon-aware design.",
+    body: "Device physics, CMOS fundamentals, circuit and PCB design from schematic to silicon-aware thinking.",
   },
   {
     title: "Test & Validation",
-    body: "Building repeatable measurement setups, instrumentation and data analysis in Python.",
+    body: "Repeatable measurement setups, automated test scripts and instrumentation with data analysis in Python.",
   },
 ];
 
@@ -105,16 +142,16 @@ function Index() {
         <div className="absolute inset-0 bg-gradient-to-b from-navy-deep/70 via-navy-deep/60 to-navy-deep" />
 
         <div className="relative mx-auto flex min-h-[92vh] max-w-5xl flex-col justify-center px-6 py-28">
-          <p className="eyebrow rise-in text-sand-muted">Hamilton, Ontario</p>
+          <p className="eyebrow rise-in text-sand-muted">Toronto, Ontario</p>
           <h1 className="rise-in mt-6 text-5xl font-medium leading-[1.02] text-sand sm:text-7xl">
-            Pasandu Didula
+            Pasandu
             <br />
             Sirisena
           </h1>
           <p className="rise-in mt-8 max-w-2xl text-lg leading-relaxed text-sand/75">
             Computer Engineering student at McMaster University working across microelectronics,
-            digital logic design and firmware. Incoming Operations Test Engineer Intern at L3Harris
-            WESCAM, and most at home where hardware and software have to agree with each other.
+            digital logic design and firmware — most at home where hardware and software have to
+            agree with each other.
           </p>
           <div className="rise-in mt-10">
             <SocialButtons />
@@ -142,27 +179,39 @@ function Index() {
 
       <WaveDivider fillClassName="text-secondary" />
 
-      {/* Projects */}
+      {/* Experience */}
       <section className="bg-secondary">
         <div className="mx-auto max-w-5xl px-6 py-24">
-          <p className="eyebrow text-muted-foreground">Selected work</p>
-          <h2 className="mt-4 text-3xl font-medium sm:text-4xl">Experience &amp; projects</h2>
+          <p className="eyebrow text-muted-foreground">Where I've worked</p>
+          <h2 className="mt-4 text-3xl font-medium sm:text-4xl">Experience</h2>
 
           <div className="mt-14 space-y-4">
-            {projects.map((p) => (
+            {experience.map((e) => (
               <article
-                key={p.title}
-                className="group rounded-2xl border border-border bg-card p-7 transition-all duration-300 hover:-translate-y-0.5 hover:border-navy-soft/40"
+                key={e.role + e.org}
+                className="rounded-2xl border border-border bg-card p-7 transition-all duration-300 hover:-translate-y-0.5 hover:border-navy-soft/40"
               >
-                <div className="flex items-start justify-between gap-6">
-                  <h3 className="text-xl font-medium">{p.title}</h3>
-                  <span className="mt-1 shrink-0 text-xs text-muted-foreground">{p.year}</span>
+                <div className="flex flex-wrap items-start justify-between gap-x-6 gap-y-1">
+                  <div>
+                    <h3 className="text-xl font-medium">{e.role}</h3>
+                    <p className="mt-1 text-sm text-muted-foreground">
+                      {e.org} · {e.place}
+                    </p>
+                  </div>
+                  <span className="mt-1 shrink-0 text-xs text-muted-foreground">{e.period}</span>
                 </div>
-                <p className="mt-3 max-w-3xl text-sm leading-relaxed text-muted-foreground">
-                  {p.body}
-                </p>
+                <ul className="mt-4 max-w-3xl space-y-2">
+                  {e.points.map((pt) => (
+                    <li
+                      key={pt}
+                      className="relative pl-4 text-sm leading-relaxed text-muted-foreground before:absolute before:left-0 before:top-[0.6em] before:h-1 before:w-1 before:rounded-full before:bg-navy-soft/50"
+                    >
+                      {pt}
+                    </li>
+                  ))}
+                </ul>
                 <ul className="mt-5 flex flex-wrap gap-2">
-                  {p.tags.map((t) => (
+                  {e.tags.map((t) => (
                     <li
                       key={t}
                       className="rounded-full border border-border px-3 py-1 text-xs text-muted-foreground"
@@ -177,7 +226,41 @@ function Index() {
         </div>
       </section>
 
-      <WaveDivider fillClassName="text-navy-deep" />
+      {/* Projects */}
+      <section className="bg-secondary">
+        <div className="mx-auto max-w-5xl px-6 pb-24">
+        <p className="eyebrow text-muted-foreground">Selected work</p>
+        <h2 className="mt-4 text-3xl font-medium sm:text-4xl">Projects</h2>
+
+        <div className="mt-14 space-y-4">
+          {projects.map((p) => (
+            <article
+              key={p.title}
+              className="group rounded-2xl border border-border bg-card p-7 transition-all duration-300 hover:-translate-y-0.5 hover:border-navy-soft/40"
+            >
+              <div className="flex items-start justify-between gap-6">
+                <h3 className="text-xl font-medium">{p.title}</h3>
+                <span className="mt-1 shrink-0 text-xs text-muted-foreground">{p.year}</span>
+              </div>
+              <p className="mt-3 max-w-3xl text-sm leading-relaxed text-muted-foreground">
+                {p.body}
+              </p>
+              <ul className="mt-5 flex flex-wrap gap-2">
+                {p.tags.map((t) => (
+                  <li
+                    key={t}
+                    className="rounded-full border border-border px-3 py-1 text-xs text-muted-foreground"
+                  >
+                    {t}
+                  </li>
+                ))}
+              </ul>
+            </article>
+          ))}
+        </div>
+        </div>
+        <WaveDivider fillClassName="text-navy-deep" />
+      </section>
 
       {/* Contact */}
       <footer className="bg-navy-deep">
@@ -195,7 +278,7 @@ function Index() {
           </div>
 
           <div className="mt-20 flex flex-wrap items-center justify-between gap-4 border-t border-sand/15 pt-6 text-xs text-sand/50">
-            <span>© {new Date().getFullYear()} Pasandu Didula Sirisena</span>
+            <span>© {new Date().getFullYear()} Pasandu Sirisena</span>
             <a
               href={LINKS.email}
               className="link-underline inline-flex items-center gap-1 text-sand/70"
