@@ -247,7 +247,7 @@ function Index() {
 
       {/* Experience */}
       <section id="experience" className="scroll-mt-20 bg-background">
-        <div className="mx-auto max-w-5xl px-6 pb-8 pt-24">
+        <div className="mx-auto max-w-5xl px-6 pb-16 pt-24">
           <h2 className="text-4xl font-medium sm:text-5xl">Experience</h2>
           <p className="eyebrow mt-2 text-muted-foreground">Where I've worked</p>
 
