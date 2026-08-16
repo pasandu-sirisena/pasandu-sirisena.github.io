@@ -37,8 +37,10 @@
   --color-sand: var(--sand);
   --color-sand-deep: var(--sand-deep);
   --color-sand-muted: var(--sand-muted);
-  --font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
-  --font-sans: "DM Sans", ui-sans-serif, system-ui, sans-serif;
+  /* Previous (sans) pairing, kept for reference:
+     display: "Space Grotesk"; body: "DM Sans" */
+  --font-display: "Instrument Serif", ui-serif, Georgia, serif;
+  --font-sans: "Source Serif 4", ui-serif, Georgia, serif;
 }
 
 :root {
@@ -90,12 +92,14 @@
   h3,
   h4 {
     font-family: var(--font-display);
-    letter-spacing: -0.025em;
+    font-weight: 400;
+    letter-spacing: -0.015em;
   }
 }
 
 @utility eyebrow {
   font-family: var(--font-sans);
+  font-weight: 600;
   font-size: 0.72rem;
   letter-spacing: 0.22em;
   text-transform: uppercase;
