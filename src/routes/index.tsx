@@ -26,7 +26,7 @@ export const Route = createFileRoute("/")({
 });
 
 const LINKS = {
-  github: "https://github.com/pasandusirisena",
+  github: "https://github.com/pasandu-sirisena",
   linkedin: "https://www.linkedin.com/in/pasandusirisena",
   email: "mailto:hello@pasandu.com",
 };
