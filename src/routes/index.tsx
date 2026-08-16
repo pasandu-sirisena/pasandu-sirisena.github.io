@@ -227,7 +227,8 @@ function Index() {
       </section>
 
       {/* Projects */}
-      <section className="mx-auto max-w-5xl px-6 py-24">
+      <section className="bg-secondary">
+        <div className="mx-auto max-w-5xl px-6 pb-24">
         <p className="eyebrow text-muted-foreground">Selected work</p>
         <h2 className="mt-4 text-3xl font-medium sm:text-4xl">Projects</h2>
 
@@ -257,9 +258,9 @@ function Index() {
             </article>
           ))}
         </div>
+        </div>
+        <WaveDivider fillClassName="text-navy-deep" />
       </section>
-
-      <WaveDivider fillClassName="text-navy-deep" />
 
       {/* Contact */}
       <footer className="bg-navy-deep">
