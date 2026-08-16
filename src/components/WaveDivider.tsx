@@ -7,8 +7,6 @@ type Props = {
   className?: string;
   /** Horizontal ripple speed (px of scroll -> % of one wave tile). */
   rippleSpeed?: number;
-  /** Vertical lag: how much slower the wave scrolls than the page. */
-  parallax?: number;
 };
 
 /** Seamless sine-like wave: starts and ends at the same height so tiles loop. */
@@ -27,13 +25,12 @@ function Wave({ fillClassName }: { fillClassName: string }) {
   );
 }
 
-/** A barely-there wave that ripples horizontally and lags vertically on scroll. */
+/** A seamless wave that ripples horizontally as you scroll. */
 export function WaveDivider({
   fillClassName,
   flip = false,
   className = "",
   rippleSpeed = 0.04,
-  parallax = 0.08,
 }: Props) {
   const scrollY = useScrollY();
   const TILE = 100 / 3; // one tile as a % of the 300%-wide track
@@ -45,10 +42,6 @@ export function WaveDivider({
       className={`pointer-events-none -mt-px w-full overflow-hidden leading-none ${
         flip ? "rotate-180" : ""
       } ${className}`}
-      style={{
-        transform: `translate3d(0, ${scrollY * parallax}px, 0)`,
-        willChange: "transform",
-      }}
     >
       <div
         className="flex w-[300%]"
