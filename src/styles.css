@@ -37,10 +37,12 @@
   --color-sand: var(--sand);
   --color-sand-deep: var(--sand-deep);
   --color-sand-muted: var(--sand-muted);
-  /* Previous (sans) pairing, kept for reference:
-     display: "Space Grotesk"; body: "DM Sans" */
-  --font-display: "Instrument Serif", ui-serif, Georgia, serif;
+  /* Previous pairings, kept for reference:
+     display: "Space Grotesk"; body: "DM Sans"
+     display: "Instrument Serif"; body: "Source Serif 4" */
+  --font-display: "DM Serif Display", ui-serif, Georgia, serif;
   --font-sans: "Source Serif 4", ui-serif, Georgia, serif;
+  --font-ui: "Inter", ui-sans-serif, system-ui, sans-serif;
 }
 
 :root {
@@ -88,21 +90,25 @@
   }
 
   h1,
-  h2,
-  h3,
-  h4 {
+  h2 {
     font-family: var(--font-display);
     font-weight: 400;
     letter-spacing: -0.015em;
   }
+
+  h3,
+  h4 {
+    font-family: var(--font-ui);
+    font-weight: 500;
+    letter-spacing: 0;
+  }
 }
 
 @utility eyebrow {
-  font-family: var(--font-sans);
-  font-weight: 600;
-  font-size: 0.72rem;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
+  font-family: var(--font-ui);
+  font-weight: 500;
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
 }
 
 @utility link-underline {
