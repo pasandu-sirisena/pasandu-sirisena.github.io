@@ -88,7 +88,7 @@ const projects = [
   {
     title: "FPGA-Based Image Decompressor",
     year: "Oct - Nov 2025",
-    body: "Designed the hardware architecture for an image decompressor on the Altera DE2-115 and implemented it in SystemVerilog, covering reverse DCT, luma/chroma upsampling and lossless decoding, verified with waveform analysis, SRAM references and VGA output.",
+    body: "Designed the hardware architecture for an image decompressor on the Altera DE2-115 and implemented it in SystemVerilog with a partner, covering reverse DCT, luma/chroma upsampling and lossless decoding, verified with waveform analysis, SRAM references and VGA output.",
     tags: ["SystemVerilog", "FPGA", "Digital Logic", "Verification"],
   },
   {
