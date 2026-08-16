@@ -2,4 +2,4 @@
 
 Personal portfolio website to showcase my skills and experience!
 
-[pasandu.com](url)
+[pasandu.com](https://pasandu.com)
