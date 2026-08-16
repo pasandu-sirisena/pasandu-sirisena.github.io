@@ -171,7 +171,7 @@ function TopBar() {
             <li key={n.href}>
               <a
                 href={n.href}
-                className="link-underline text-xs font-medium text-sand/70 transition-colors hover:text-sand"
+                className="link-underline text-sm font-medium text-sand/70 transition-colors hover:text-sand"
               >
                 {n.label}
               </a>
