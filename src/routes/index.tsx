@@ -260,7 +260,7 @@ function Index() {
             {experience.map((e) => (
               <article
                 key={e.role + e.org}
-                className="rounded-2xl border border-border bg-card p-7 transition-all duration-300 hover:-translate-y-0.5 hover:border-navy-soft/40"
+                className="rounded-2xl border border-border bg-card p-7 transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:border-navy-soft/40"
               >
                 <div className="flex items-start gap-4">
                   <LogoBadge src={e.logo} alt={`${e.org} logo`} />
@@ -310,7 +310,7 @@ function Index() {
             {projects.map((p) => (
               <article
                 key={p.title}
-                className="group rounded-2xl border border-border bg-card p-7 transition-all duration-300 hover:-translate-y-0.5 hover:border-navy-soft/40"
+                className="group rounded-2xl border border-border bg-card p-7 transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:border-navy-soft/40"
               >
                 <div className="flex flex-col gap-1 sm:flex-row sm:items-start sm:justify-between">
                   <h3 className="text-2xl font-medium">{p.title}</h3>
@@ -349,7 +349,7 @@ function Index() {
                   {s.items.map((i) => (
                     <li
                       key={i}
-                      className="rounded-full border border-border bg-card px-5 py-2 text-base text-muted-foreground"
+                      className="rounded-full border border-border bg-card px-5 py-2 text-base text-muted-foreground transition-all duration-300 hover:-translate-y-1 hover:shadow-sm hover:border-navy-soft/40"
                     >
                       {i}
                     </li>
@@ -371,7 +371,7 @@ function Index() {
             {education.map((ed) => (
               <article
                 key={ed.school}
-                className="rounded-2xl border border-border bg-card p-7 transition-all duration-300 hover:-translate-y-0.5 hover:border-navy-soft/40"
+                className="rounded-2xl border border-border bg-card p-7 transition-all duration-300 hover:-translate-y-1 hover:shadow-md hover:border-navy-soft/40"
               >
                 <div className="flex items-start gap-4">
                   <LogoBadge src={ed.logo} alt={`${ed.school} logo`} />
