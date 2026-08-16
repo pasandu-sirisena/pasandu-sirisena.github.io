@@ -42,7 +42,8 @@
      display: "Instrument Serif"; body: "Source Serif 4" */
   --font-display: "DM Serif Display", ui-serif, Georgia, serif;
   --font-sans: "Source Serif 4", ui-serif, Georgia, serif;
-  --font-ui: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-ui: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-ui-body: "DM Sans", ui-sans-serif, system-ui, sans-serif;
 }
 
 :root {
@@ -105,7 +106,7 @@
 }
 
 @utility eyebrow {
-  font-family: var(--font-ui);
+  font-family: var(--font-ui-body);
   font-weight: 500;
   font-size: 0.75rem;
   letter-spacing: 0.04em;
