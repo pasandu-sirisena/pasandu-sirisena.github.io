@@ -5,6 +5,7 @@ import l3logo from "@/assets/l3harris.png.asset.json";
 import cibcLogo from "@/assets/cibc.jpg.asset.json";
 import mcmasterLogo from "@/assets/mcmaster.jpg.asset.json";
 import { WaveDivider } from "@/components/WaveDivider";
+import { useScrollY } from "@/hooks/use-scroll-y";
 
 export const Route = createFileRoute("/")({
   head: () => ({
