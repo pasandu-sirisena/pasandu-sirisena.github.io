@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Github, Linkedin, Mail, ArrowUpRight } from "lucide-react";
+import { Github, Linkedin, Mail } from "lucide-react";
 import contour from "@/assets/contour.png.asset.json";
 import l3logo from "@/assets/l3harris.png.asset.json";
 import cibcLogo from "@/assets/cibc.jpg.asset.json";
@@ -412,14 +412,8 @@ function Index() {
             <SocialButtons />
           </div>
 
-          <div className="mt-20 flex flex-wrap items-center justify-between gap-4 border-t border-sand/15 pt-6 text-sm text-sand/55">
+          <div className="mt-20 border-t border-sand/15 pt-6 text-sm text-sand/55">
             <span>© {new Date().getFullYear()} Pasandu Sirisena</span>
-            <a
-              href={LINKS.email}
-              className="link-underline inline-flex items-center gap-1 text-sand/70"
-            >
-              Say hello <ArrowUpRight className="h-3 w-3" />
-            </a>
           </div>
         </div>
       </footer>
