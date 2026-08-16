@@ -295,8 +295,6 @@ function Index() {
         </div>
       </section>
 
-      <WaveDivider fillClassName="text-background" />
-
       {/* Projects */}
       <section id="projects" className="scroll-mt-20 bg-background">
         <div className="mx-auto max-w-5xl px-6 py-24">
