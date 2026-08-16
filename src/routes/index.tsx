@@ -111,7 +111,18 @@ const skills = [
   },
   {
     group: "Embedded systems & hardware",
-    items: ["VHDL", "FPGAs", "Digital Logic Design", "Circuit Design", "PCB Design"],
+    items: [
+      "VHDL",
+      "FPGAs",
+      "Digital Logic Design",
+      "Circuit Design",
+      "PCB Design",
+      "Microcontrollers",
+      "ESP32",
+      "Raspberry Pi",
+      "Digital Signal Processing",
+      "Multithreading",
+    ],
   },
   {
     group: "Tools & technologies",
