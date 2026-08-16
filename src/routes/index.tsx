@@ -47,12 +47,12 @@ const experience = [
     role: "Hardware/Software Test Engineering Intern",
     org: "L3Harris WESCAM",
     place: "Hamilton, ON",
-    period: "May 2026 to Present",
+    period: "May 2026 - Present",
     logo: l3logo.url,
     points: [
-      "Write low-level C/C++ unit test software to validate custom cables, electronic hardware and development kits, debugging across the hardware/software boundary.",
-      "Deploy automated scripts and performance analysis tooling to systematically test MX series electro-mechanical camera turrets.",
-      "Work directly with hardware and systems teams to build physical test infrastructure, integrating discrete circuit elements with embedded software features.",
+      "Wrote low-level C/C++ unit test software to validate custom cables, electronic hardware and development kits, debugging across the hardware/software boundary.",
+      "Deployed automated scripts and performance analysis tooling to systematically test MX series electro-mechanical camera turrets.",
+      "Worked directly with hardware and systems teams to build physical test infrastructure, integrating discrete circuit elements with embedded software features.",
     ],
     tags: ["C/C++", "Test Automation", "Hardware Validation"],
   },
@@ -60,7 +60,7 @@ const experience = [
     role: "Software Development & IT Project Management Intern",
     org: "CIBC",
     place: "Toronto, ON",
-    period: "May 2025 to Aug 2025",
+    period: "May 2025 - Aug 2025",
     logo: cibcLogo.url,
     points: [
       "Built and tested a critical Java/Spring Boot microservice with JUnit 5 and Mockito, cutting regression bugs by over 40%.",
@@ -74,21 +74,33 @@ const experience = [
 const projects = [
   {
     title: "FPGA-Based Wi-Fi Spatial Sensor",
-    year: "2026",
+    year: "April 2026",
     body: "Programmed an ESP32 in C/C++ to extract and filter raw Wi-Fi Channel State Information, with custom Verilog logic on a Tang Primer FPGA accelerating high-throughput parallel signal workloads and Python spatial algorithms analysing the CSI metrics end to end.",
     tags: ["Verilog", "C/C++", "Python", "ESP32", "FPGA"],
   },
   {
+    title: "Real-Time Software-Defined Radio (SDR)",
+    year: "March - April 2026",
+    body: "Built a real-time SDR system on a Raspberry Pi 4 with RF hardware to process FM mono and stereo signals. The DSP pipeline was modelled in Python and then optimised in C++ to meet strict real-time constraints, using a multithreaded producer-consumer architecture with a FIFO queue and mutex synchronisation to handle high-speed data streams without audio stuttering.",
+    tags: ["C++", "Python", "DSP", "Raspberry Pi", "Multithreading"],
+  },
+  {
     title: "FPGA-Based Image Decompressor",
-    year: "2025",
+    year: "Oct - Nov 2025",
     body: "Designed the hardware architecture for an image decompressor on the Altera DE2-115 and implemented it in SystemVerilog, covering reverse DCT, luma/chroma upsampling and lossless decoding, verified with waveform analysis, SRAM references and VGA output.",
     tags: ["SystemVerilog", "FPGA", "Digital Logic", "Verification"],
   },
   {
     title: "3D Spatial Mapping System (ToF Sensor)",
-    year: "2025",
-    body: "An embedded 3D spatial mapper pairing a Time-of-Flight sensor with firmware in C/C++ on an ARM Cortex-M4F microcontroller, processing and visualising 360° point clouds in Open3D.",
-    tags: ["C/C++", "ARM Cortex-M4F", "Python", "Open3D"],
+    year: "March - April 2025",
+    body: "An embedded 3D spatial mapper pairing a Time-of-Flight sensor with firmware in C/C++ on a Cortex-M4F microcontroller, processing and visualising 360° point clouds in Open3D.",
+    tags: ["C/C++", "Microcontrollers", "Python", "Open3D"],
+  },
+  {
+    title: "Vital-E: ESP32 Autonomous Hospital Robot",
+    year: "Feb 2025",
+    body: "An autonomous robotics platform on the ESP32 that collects and transmits patient vitals in low-resource clinical settings, using line-following navigation and proximity detection to move through hospital corridors and wirelessly deliver real-time bedside data to a secure web dashboard.",
+    tags: ["ESP32", "C/C++", "Embedded Systems", "Sensors", "Web Dashboard"],
   },
 ];
 
