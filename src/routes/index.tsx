@@ -134,19 +134,18 @@ const education = [
     school: "McMaster University",
     degree: "Bachelor of Engineering, Computer Engineering (Co-op)",
     place: "Hamilton, ON",
-    period: "Sep 2023 to May 2028",
+    period: "Sep 2023 - May 2028",
     logo: mcmasterLogo.url,
     points: [
       "Currently in 4th year, expected to graduate in 2028.",
       "Coursework across digital logic design, microelectronics, embedded systems and computer architecture.",
-      "GPA: 3.5/4.0",
     ],
   },
 ];
 
 function SocialButtons() {
   const base =
-    "group inline-flex items-center gap-2 rounded-full border border-sand/30 bg-sand/5 px-5 py-3 text-sm font-medium text-sand backdrop-blur-sm transition-all duration-300 hover:bg-sand hover:text-navy-deep";
+    "group inline-flex items-center gap-2 rounded-full border border-sand/30 bg-sand/5 px-5 py-3 text-base font-medium text-sand backdrop-blur-sm transition-all duration-300 hover:bg-sand hover:text-navy-deep";
   return (
     <div className="flex flex-wrap items-center gap-3">
       <a href={LINKS.github} target="_blank" rel="noreferrer" className={base}>
