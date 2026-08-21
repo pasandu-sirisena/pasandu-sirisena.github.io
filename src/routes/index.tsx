@@ -361,9 +361,16 @@ function Index() {
                   <h3 className="text-2xl font-medium">{p.title}</h3>
                   <p className="text-sm text-muted-foreground">{p.year}</p>
                 </div>
-                <p className="mt-3 max-w-3xl text-base leading-relaxed text-muted-foreground">
-                  {p.body}
-                </p>
+                <ul className="mt-3 max-w-3xl space-y-1.5">
+                  {p.points.map((pt) => (
+                    <li
+                      key={pt}
+                      className="relative pl-4 text-base leading-relaxed text-muted-foreground before:absolute before:left-0 before:top-[0.6em] before:h-1 before:w-1 before:rounded-full before:bg-navy-soft/50"
+                    >
+                      {pt}
+                    </li>
+                  ))}
+                </ul>
                 <ul className="mt-4 flex flex-wrap gap-2">
                   {p.tags.map((t) => (
                     <li
