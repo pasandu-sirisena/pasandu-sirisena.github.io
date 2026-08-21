@@ -87,9 +87,6 @@ const projects = [
       "RISC-V",
       "FPGA",
       "Computer Architecture",
-      "Wishbone",
-      "Yosys",
-      "Assembler",
     ],
   },
   {
@@ -458,7 +455,7 @@ function Index() {
       <footer id="contact" className="scroll-mt-20 bg-navy-deep">
         <div className="mx-auto max-w-5xl px-6 py-24">
           <h2 className="max-w-2xl text-4xl font-medium text-sand sm:text-5xl">
-            Currently looking for opportunities in design verification and AI chip workflows.
+            Currently looking for future opportunities in design verification and AI chip workflows.
           </h2>
           <p className="eyebrow mt-3 text-sand-muted">Let's connect!</p>
           <p className="mt-4 max-w-xl text-lg text-sand/75">
