@@ -74,36 +74,51 @@ const experience = [
 
 const projects = [
   {
+    title: "Custom RV32IM System-on-Chip",
+    year: "August 2026",
+    body: "Designed and verified a pipelined 32-bit RISC-V (RV32IM) processor and full System-on-Chip in Verilog HDL, running at 27 MHz on a Sipeed Tang Primer 20K FPGA (Gowin GW2A-LV18). The core implements a classic 5-stage pipeline (fetch, decode, execute, memory, writeback) with the complete RV32I base ISA plus the RV32M extension, using a combinational DSP-backed multiplier and a multi-cycle sequential restoring divider that stalls the pipeline only while it computes. A full forwarding network resolves EX/MEM and MEM/WB data hazards, a hazard unit inserts load-use interlocks, and taken branches and jumps are resolved with pipeline flushes and PC redirection. Around the core I built a Wishbone B4 interconnect with an address-decoded peripheral map: 8 KB of dual-port Gowin BSRAM for unified instruction and data memory, a 115.2 kBaud UART bridged to the onboard BL702, and a GPIO controller driving the dock LEDs. Firmware is assembled by a custom two-pass assembler I wrote to resolve labels and emit machine code, and the whole design is built with a fully open-source EDA flow of Yosys, nextpnr, Project Apicula and openFPGALoader.",
+    tags: [
+      "Verilog",
+      "RISC-V",
+      "FPGA",
+      "Computer Architecture",
+      "Wishbone",
+      "Yosys",
+      "Assembler",
+    ],
+  },
+  {
     title: "FPGA-Based Wi-Fi Spatial Sensor",
     year: "April 2026",
-    body: "Programmed an ESP32 in C/C++ to extract and filter raw Wi-Fi Channel State Information, with custom Verilog logic on a Tang Primer FPGA accelerating high-throughput parallel signal workloads and Python spatial algorithms analysing the CSI metrics end to end.",
-    tags: ["Verilog", "C/C++", "Python", "ESP32", "FPGA"],
+    body: "Built a device-free spatial sensing system that infers presence and movement from ordinary Wi-Fi traffic. An ESP32 programmed in C/C++ extracts raw Channel State Information from incoming frames and applies amplitude and phase filtering to suppress hardware noise and carrier frequency offset. Custom Verilog logic on a Tang Primer FPGA accelerates the high-throughput parallel signal workloads, processing subcarrier streams concurrently rather than serially on the microcontroller. A Python layer on the host implements the spatial algorithms, correlating filtered CSI metrics over time to detect motion and estimate coarse position across a room.",
+    tags: ["Verilog", "C/C++", "Python", "ESP32", "FPGA", "Signal Processing"],
   },
   {
     title: "Real-Time Software-Defined Radio (SDR)",
     year: "March - April 2026",
-    body: "Built a real-time SDR system on a Raspberry Pi 4 with RF hardware to process FM mono and stereo signals. The DSP pipeline was modelled in Python and then optimised in C++ to meet strict real-time constraints, using a multithreaded producer-consumer architecture with a FIFO queue and mutex synchronisation to handle high-speed data streams without audio stuttering.",
+    body: "Built a real-time SDR receiver on a Raspberry Pi 4 with an RTL-SDR front end, demodulating both FM mono and stereo broadcasts from raw IQ samples. The full DSP chain of RF front-end filtering, decimation, FM demodulation, pilot tone recovery through a phase-locked loop, stereo channel separation and audio resampling was first modelled in Python for correctness, then rewritten and optimised in C++ to meet hard real-time deadlines. Efficiency came from polyphase resampling and in-place convolution to cut redundant multiply-accumulate work. Threads for RF front-end, audio path and output are decoupled by a FIFO queue with mutex and condition-variable synchronisation, giving a producer-consumer architecture that absorbs sample rate jitter and eliminates audio stuttering.",
     tags: ["C++", "Python", "DSP", "Raspberry Pi", "Multithreading"],
   },
   {
     title: "FPGA-Based Image Decompressor",
     year: "Oct - Nov 2025",
-    body: "Designed the hardware architecture for an image decompressor on the Altera DE2-115 and implemented it in SystemVerilog with a partner, covering reverse DCT, luma/chroma upsampling and lossless decoding, verified with waveform analysis, SRAM references and VGA output.",
-    tags: ["SystemVerilog", "FPGA", "Digital Logic", "Verification"],
+    body: "Designed the hardware architecture for a JPEG-style image decompressor on the Altera DE2-115 and implemented it in SystemVerilog with a partner. The design is split into milestones covering lossless decoding, inverse discrete cosine transform and luma/chroma upsampling, each built as a finite state machine that streams pixel data through SRAM with carefully scheduled read and write cycles to respect single-port memory latency. Multipliers and adders are shared and time-multiplexed across states to fit the resource budget, and the final image is streamed to a VGA controller for display. Verification combined ModelSim waveform analysis against golden SRAM reference files with per-milestone checksum comparison to catch arithmetic and timing errors before hardware bring-up.",
+    tags: ["SystemVerilog", "FPGA", "Digital Logic", "Verification", "VGA"],
   },
   {
     title: "3D Spatial Mapping System (ToF Sensor)",
     year: "March - April 2025",
-    body: "An embedded 3D spatial mapper pairing a Time-of-Flight sensor with firmware in C/C++ on a Cortex-M4F microcontroller, processing and visualising 360° point clouds in Open3D.",
-    tags: ["C/C++", "Microcontrollers", "Python", "Open3D"],
+    body: "An embedded 3D spatial mapper that reconstructs the interior geometry of a hallway from range measurements. A Time-of-Flight distance sensor is mounted on a stepper motor and driven by firmware written in C/C++ on a Cortex-M4F microcontroller, which configures the sensor over I2C, sweeps a full 360° rotation in fixed angular steps and streams distance readings over UART. A Python host application converts each polar reading into Cartesian coordinates, stacks successive scan planes along the travel axis and renders the resulting point cloud in Open3D with vertex connections between adjacent slices to form a continuous mesh of the space.",
+    tags: ["C/C++", "Microcontrollers", "Python", "Open3D", "I2C"],
   },
   {
     title: "Vital-E: ESP32 Autonomous Hospital Robot",
     year: "Feb 2025",
-    body: "An autonomous robotics platform on the ESP32 that collects and transmits patient vitals in low-resource clinical settings, using line-following navigation and proximity detection to move through hospital corridors and wirelessly deliver real-time bedside data to a secure web dashboard.",
+    body: "An autonomous robotics platform built on the ESP32 that collects and transmits patient vitals in low-resource clinical settings. Infrared line-following sensors and a PID-tuned differential drive keep the robot tracking corridor paths, while ultrasonic proximity detection halts motion when staff or obstacles enter its path. Onboard sensors capture bedside vitals, which the ESP32 timestamps and pushes over Wi-Fi to a secure web dashboard so clinicians can monitor multiple patients in real time without physically visiting each bed.",
     tags: ["ESP32", "C/C++", "Embedded Systems", "Sensors", "Web Dashboard"],
   },
 ];
+
 
 const skills = [
   {
