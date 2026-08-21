@@ -76,7 +76,12 @@ const projects = [
   {
     title: "Custom RV32IM System-on-Chip",
     year: "August 2026",
-    body: "Designed and verified a pipelined 32-bit RISC-V (RV32IM) processor and full System-on-Chip in Verilog HDL, running at 27 MHz on a Sipeed Tang Primer 20K FPGA (Gowin GW2A-LV18). The core implements a classic 5-stage pipeline (fetch, decode, execute, memory, writeback) with the complete RV32I base ISA plus the RV32M extension, using a combinational DSP-backed multiplier and a multi-cycle sequential restoring divider that stalls the pipeline only while it computes. A full forwarding network resolves EX/MEM and MEM/WB data hazards, a hazard unit inserts load-use interlocks, and taken branches and jumps are resolved with pipeline flushes and PC redirection. Around the core I built a Wishbone B4 interconnect with an address-decoded peripheral map: 8 KB of dual-port Gowin BSRAM for unified instruction and data memory, a 115.2 kBaud UART bridged to the onboard BL702, and a GPIO controller driving the dock LEDs. Firmware is assembled by a custom two-pass assembler I wrote to resolve labels and emit machine code, and the whole design is built with a fully open-source EDA flow of Yosys, nextpnr, Project Apicula and openFPGALoader.",
+    points: [
+      "Built a complete 32-bit RISC-V processor in Verilog and ran it on an FPGA at 27 MHz.",
+      "Designed a 5-stage pipeline with hazard handling, data forwarding, and branch recovery.",
+      "Added a UART, GPIO, and memory bus so the core could run real programs from a custom assembler.",
+      "Used an open-source FPGA toolchain from synthesis to bitstream download.",
+    ],
     tags: [
       "Verilog",
       "RISC-V",
@@ -90,31 +95,56 @@ const projects = [
   {
     title: "FPGA-Based Wi-Fi Spatial Sensor",
     year: "April 2026",
-    body: "Built a device-free spatial sensing system that infers presence and movement from ordinary Wi-Fi traffic. An ESP32 programmed in C/C++ extracts raw Channel State Information from incoming frames and applies amplitude and phase filtering to suppress hardware noise and carrier frequency offset. Custom Verilog logic on a Tang Primer FPGA accelerates the high-throughput parallel signal workloads, processing subcarrier streams concurrently rather than serially on the microcontroller. A Python layer on the host implements the spatial algorithms, correlating filtered CSI metrics over time to detect motion and estimate coarse position across a room.",
+    points: [
+      "Created a sensor that detects people and movement from ordinary Wi-Fi signals.",
+      "Programmed an ESP32 to capture raw channel data and filter out hardware noise.",
+      "Offloaded the heavy signal processing to an FPGA for faster parallel computation.",
+      "Wrote Python software on the host side to turn filtered data into motion alerts.",
+    ],
     tags: ["Verilog", "C/C++", "Python", "ESP32", "FPGA", "Signal Processing"],
   },
   {
     title: "Real-Time Software-Defined Radio (SDR)",
     year: "March - April 2026",
-    body: "Built a real-time SDR receiver on a Raspberry Pi 4 with an RTL-SDR front end, demodulating both FM mono and stereo broadcasts from raw IQ samples. The full DSP chain of RF front-end filtering, decimation, FM demodulation, pilot tone recovery through a phase-locked loop, stereo channel separation and audio resampling was first modelled in Python for correctness, then rewritten and optimised in C++ to meet hard real-time deadlines. Efficiency came from polyphase resampling and in-place convolution to cut redundant multiply-accumulate work. Threads for RF front-end, audio path and output are decoupled by a FIFO queue with mutex and condition-variable synchronisation, giving a producer-consumer architecture that absorbs sample rate jitter and eliminates audio stuttering.",
+    points: [
+      "Built an FM radio receiver on a Raspberry Pi with a low-cost RTL-SDR dongle.",
+      "Prototyped the signal processing chain in Python, then rewrote it in C++ for real-time audio.",
+      "Used multithreading and a FIFO queue to keep audio smooth and free of stuttering.",
+      "Added stereo decoding by recovering the pilot tone with a phase-locked loop.",
+    ],
     tags: ["C++", "Python", "DSP", "Raspberry Pi", "Multithreading"],
   },
   {
     title: "FPGA-Based Image Decompressor",
     year: "Oct - Nov 2025",
-    body: "Designed the hardware architecture for a JPEG-style image decompressor on the Altera DE2-115 and implemented it in SystemVerilog with a partner. The design is split into milestones covering lossless decoding, inverse discrete cosine transform and luma/chroma upsampling, each built as a finite state machine that streams pixel data through SRAM with carefully scheduled read and write cycles to respect single-port memory latency. Multipliers and adders are shared and time-multiplexed across states to fit the resource budget, and the final image is streamed to a VGA controller for display. Verification combined ModelSim waveform analysis against golden SRAM reference files with per-milestone checksum comparison to catch arithmetic and timing errors before hardware bring-up.",
+    points: [
+      "Designed a JPEG-style image decompressor on an FPGA in SystemVerilog with a partner.",
+      "Built the design as a pipeline of state machines that stream pixels through on-chip memory.",
+      "Shared multipliers and adders across states to keep the hardware footprint small.",
+      "Verified each milestone against reference data before running it on the FPGA board.",
+    ],
     tags: ["SystemVerilog", "FPGA", "Digital Logic", "Verification", "VGA"],
   },
   {
     title: "3D Spatial Mapping System (ToF Sensor)",
     year: "March - April 2025",
-    body: "An embedded 3D spatial mapper that reconstructs the interior geometry of a hallway from range measurements. A Time-of-Flight distance sensor is mounted on a stepper motor and driven by firmware written in C/C++ on a Cortex-M4F microcontroller, which configures the sensor over I2C, sweeps a full 360° rotation in fixed angular steps and streams distance readings over UART. A Python host application converts each polar reading into Cartesian coordinates, stacks successive scan planes along the travel axis and renders the resulting point cloud in Open3D with vertex connections between adjacent slices to form a continuous mesh of the space.",
+    points: [
+      "Made a 3D hallway scanner using a time-of-flight distance sensor on a rotating mount.",
+      "Wrote embedded firmware to spin the sensor, take readings, and send them to a PC.",
+      "Converted polar range data into Cartesian points and stacked scans into a 3D cloud.",
+      "Rendered the final point cloud in Open3D to visualize the mapped space.",
+    ],
     tags: ["C/C++", "Microcontrollers", "Python", "Open3D", "I2C"],
   },
   {
     title: "Vital-E: ESP32 Autonomous Hospital Robot",
     year: "Feb 2025",
-    body: "An autonomous robotics platform built on the ESP32 that collects and transmits patient vitals in low-resource clinical settings. Infrared line-following sensors and a PID-tuned differential drive keep the robot tracking corridor paths, while ultrasonic proximity detection halts motion when staff or obstacles enter its path. Onboard sensors capture bedside vitals, which the ESP32 timestamps and pushes over Wi-Fi to a secure web dashboard so clinicians can monitor multiple patients in real time without physically visiting each bed.",
+    points: [
+      "Built an ESP32 robot that follows lines and avoids obstacles to deliver patient vitals.",
+      "Used infrared sensors and a PID motor controller to keep the robot on track.",
+      "Added ultrasonic proximity detection so it stops safely when something is in the way.",
+      "Streamed vital signs over Wi-Fi to a web dashboard for remote bedside monitoring.",
+    ],
     tags: ["ESP32", "C/C++", "Embedded Systems", "Sensors", "Web Dashboard"],
   },
 ];
@@ -331,9 +361,16 @@ function Index() {
                   <h3 className="text-2xl font-medium">{p.title}</h3>
                   <p className="text-sm text-muted-foreground">{p.year}</p>
                 </div>
-                <p className="mt-3 max-w-3xl text-base leading-relaxed text-muted-foreground">
-                  {p.body}
-                </p>
+                <ul className="mt-3 max-w-3xl space-y-1.5">
+                  {p.points.map((pt) => (
+                    <li
+                      key={pt}
+                      className="relative pl-4 text-base leading-relaxed text-muted-foreground before:absolute before:left-0 before:top-[0.6em] before:h-1 before:w-1 before:rounded-full before:bg-navy-soft/50"
+                    >
+                      {pt}
+                    </li>
+                  ))}
+                </ul>
                 <ul className="mt-4 flex flex-wrap gap-2">
                   {p.tags.map((t) => (
                     <li
